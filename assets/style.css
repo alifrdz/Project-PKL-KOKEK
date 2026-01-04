@@ -1,0 +1,374 @@
+/* ==========================================================================
+   MASTER STYLE - DOLANKUY (TIKET.COM EDITION)
+   ========================================================================== */
+
+/* 1. IMPORTS & VARIABLES */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    /* Color Palette */
+    --primary: #0064D2;       /* Tiket Blue */
+    --primary-dark: #004eb3;
+    --accent: #FEDD00;        /* Tiket Yellow */
+    --dark: #1D2433;          /* Dark Text */
+    --gray-text: #687176;     /* Muted Text */
+    --bg-light: #F5F6F8;      /* Page Background */
+    --white: #FFFFFF;
+    
+    /* Shapes */
+    --radius-pill: 100px;
+    --radius-xl: 24px;        /* Widget Besar */
+    --radius-lg: 16px;        /* Card Wisata */
+    --radius-md: 12px;        /* Input/Button */
+    
+    /* Shadows */
+    --shadow-soft: 0 8px 24px rgba(29, 36, 51, 0.08);
+    --shadow-hover: 0 16px 40px rgba(29, 36, 51, 0.12);
+}
+
+/* 2. GLOBAL RESET */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--dark);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .navbar-brand, .hero-title, .card-title-tiket {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+a { text-decoration: none; }
+
+/* ==========================================================================
+   A. FRONT-END (PENGUNJUNG)
+   ========================================================================== */
+
+/* NAVBAR (Putih Bersih ala Tiket) */
+.navbar-tiket {
+    background: var(--white) !important;
+    box-shadow: var(--shadow-soft);
+    padding: 1rem 0;
+    transition: all 0.3s;
+}
+
+.navbar-tiket .navbar-brand {
+    color: var(--primary) !important;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.navbar-tiket .nav-link {
+    color: var(--dark) !important;
+    font-weight: 600;
+    margin-left: 1rem;
+    font-size: 0.95rem;
+}
+
+.btn-login-nav {
+    background: var(--primary);
+    color: white !important;
+    border-radius: var(--radius-pill);
+    padding: 8px 24px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 100, 210, 0.2);
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-login-nav:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* HERO SECTION (OVERLAP LAYOUT) */
+.hero-banner-wrapper {
+    height: 500px;
+    position: relative;
+    margin-bottom: -120px; /* Margin negatif biar Widget naik ke atas */
+    z-index: 1;
+}
+
+.hero-banner-image {
+    width: 100%;
+    height: 100%;
+    /* Gambar Pemandangan HD */
+    background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 60%),
+                url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1920');
+    background-size: cover;
+    background-position: center 30%; /* Fokus agak ke atas */
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.hero-text-content {
+    padding-top: 80px;
+}
+
+.hero-title {
+    text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* SEARCH WIDGET (KOTAK PUTIH) */
+.search-widget-wrapper {
+    position: relative;
+    z-index: 10;
+    padding-bottom: 4rem;
+}
+
+.search-widget-box {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+/* Tombol Tab Active */
+.nav-pills .nav-link.active {
+    background-color: #EBF5FF;
+    color: var(--primary);
+}
+
+/* GANTI TOMBOL CARI JADI BIRU (Lebih Elegan & Corporate) */
+.btn-cari-tiket {
+    background-color: var(--primary); /* Biru Utama */
+    color: white; /* Teks jadi Putih biar kontras */
+    border: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 100, 210, 0.3); /* Bayangan Biru Halus */
+}
+
+.btn-cari-tiket:hover {
+    background-color: var(--primary-dark); /* Biru lebih gelap pas dihover */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 100, 210, 0.4);
+}
+
+/* CARD WISATA */
+.card-wisata-tiket {
+    border: none;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+}
+
+.card-wisata-tiket:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card-img-wrapper {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.card-wisata-tiket:hover .card-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.badge-tiket {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--white);
+    color: var(--primary);
+    padding: 6px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 700;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.card-body-tiket { padding: 1.25rem; }
+
+.card-title-tiket {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--dark);
+}
+
+.card-location-tiket {
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.btn-detail-tiket {
+    color: var(--primary);
+    font-weight: 700;
+    background: #EBF5FF;
+    border-radius: var(--radius-md);
+    width: 100%;
+    padding: 10px;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-detail-tiket:hover {
+    background: var(--primary);
+    color: white;
+}
+
+
+/* ========================================
+   FOOTER FIX (FORCE BLUE)
+   ======================================== */
+footer, .footer, .footer-tiket {
+    background-color: #0064D2 !important; /* KITA PAKSA BIRU TIKET */
+    color: #ffffff !important;            /* Teks Putih */
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    margin-top: auto;
+    width: 100%;
+}
+
+/* Link di Footer */
+footer a, .footer a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer a:hover, .footer a:hover {
+    color: #FEDD00 !important; /* Hover Kuning */
+    text-decoration: underline;
+}
+
+/* Garis Pembatas */
+.border-white-10 {
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Tombol Sosmed */
+.btn-outline-light {
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    color: white !important;
+}
+
+.btn-outline-light:hover {
+    background-color: white !important;
+    color: #0064D2 !important;
+}
+
+/* ==========================================================================
+   C. BACK-END (ADMIN DASHBOARD)
+   ========================================================================== */
+/* Sidebar */
+#sidebar-wrapper {
+    min-width: 260px;
+    max-width: 260px;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    min-height: 100vh;
+}
+
+.sidebar-heading {
+    padding: 2rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.list-group-item {
+    background: transparent;
+    color: #94a3b8;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    margin: 5px 15px;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.list-group-item:hover {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    transform: translateX(5px);
+}
+
+/* Admin Content */
+#page-content-wrapper { width: 100%; background: var(--bg-light); padding: 30px; }
+
+/* Admin Cards */
+.card-counter {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: 25px;
+    border: none;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 20px;
+}
+
+.card-counter h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin-top: 10px;
+}
+
+/* Admin Table */
+.table-modern {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.table-modern tbody tr {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    transition: transform 0.2s;
+}
+
+.table-modern tbody tr:hover { transform: scale(1.005); }
+
+.table-modern td {
+    border: none;
+    padding: 20px;
+    vertical-align: middle;
+}
+
+.table-modern td:first-child { border-radius: 12px 0 0 12px; }
+.table-modern td:last-child { border-radius: 0 12px 12px 0; }
+
+.img-thumbnail-table {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Action Buttons */
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-icon.edit { background: #E0F2FE; color: #0284C7; }
+.btn-icon.delete { background: #FEE2E2; color: #DC2626; }
+.btn-icon:hover { transform: translateY(-2px); }
